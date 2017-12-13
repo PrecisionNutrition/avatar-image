@@ -1,13 +1,7 @@
-import Ember from 'ember';
+import { computed } from '@ember/object';
+import Component from '@ember/component';
+import { htmlSafe } from '@ember/string';
 import layout from '../templates/components/avatar-image';
-
-const {
-  computed,
-  Component,
-  String: {
-    htmlSafe,
-  },
-} = Ember;
 
 /**
  * Display an avatar image that is hosted at a place that (optionally) supports
