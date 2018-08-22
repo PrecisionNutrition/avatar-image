@@ -1,5 +1,5 @@
 'use strict';
 
 module.exports = {
-  name: 'avatar-image'
+  name: '@precision-nutrition/avatar-image'
 };
