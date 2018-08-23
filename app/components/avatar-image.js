@@ -1,1 +1,1 @@
-export { default } from 'avatar-image/components/avatar-image';
+export { default } from '@precision-nutrition/avatar-image/components/avatar-image';
