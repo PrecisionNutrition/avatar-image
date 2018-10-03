@@ -36,7 +36,7 @@ jobs:
       # Download and cache dependencies
       - restore_cache:
           keys:
-            - v1-dependencies-{{ .Branch }}--{{ checksum "yarn.lock" }}
+            - v1-dependencies-{{ .Branch }}--{{ checksum "package-lock.lock" }}
             - v1-dependencies-{{ .Branch }}-
             - v1-dependencies-
 
@@ -50,7 +50,7 @@ jobs:
             npm install
 
       - save_cache:
-          key: v1-dependencies-{{ .Branch }}--{{ checksum "yarn.lock" }}
+          key: v1-dependencies-{{ .Branch }}--{{ checksum "package-lock.lock" }}
           paths:
             - ./node_modules
 

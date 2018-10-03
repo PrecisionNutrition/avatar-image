@@ -17,6 +17,7 @@ ember-cli-build.js
 testem.js
 .nvmrc
 yarn.lock
+package-lock.json
 
 # ember-try
 .node_modules.ember-try/
