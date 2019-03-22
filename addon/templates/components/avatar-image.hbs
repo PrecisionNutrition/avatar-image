@@ -1,12 +1,12 @@
 {{#if url}}
-  <img
-    src={{concat @url "?" urlParams}}
-    alt={{@alt}}
+  <ImgixPhoto
+    @alt={{@alt}}
+    @autoSetDimensions={{true}}
+    @params={{@params}}
+    @url={{@url}}
     class={{@avatarImageClass}}
     data-test-selector="avatar-image"
-    width={{@w}}
-    height={{@h}}
-  >
+  />
 {{else}}
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" data-test-selector="avatar-icon" class="u-fillGreyDarkest {{@avatarIconClass}}">
     <g class="nc-icon-wrapper" stroke-linecap="square" stroke-linejoin="miter" stroke-width="3" fill="#111111" stroke="#111111">
