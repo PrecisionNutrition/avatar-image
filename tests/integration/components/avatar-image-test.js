@@ -131,7 +131,7 @@ module('Integration | Component | avatar image', function(hooks) {
     let img = find('[data-test-selector="avatar-image"]');
 
     assert.equal(img.getAttribute('alt'), 'Cheesus', 'sets "alt" attribute');
-    assert.ok(img.classList.contains('piggy'), 'sets class names on image');
+    assert.dom(img).hasClass('piggy', 'sets class names on image');
   });
 
   test('no url provided', async function(assert) {
@@ -140,6 +140,6 @@ module('Integration | Component | avatar image', function(hooks) {
     let avatarIcon = find('[data-test-selector="avatar-icon"]');
 
     assert.ok(avatarIcon, 'displays blank avatar icon');
-    assert.ok(avatarIcon.classList.contains('foo'), 'sets class names on avatar icon');
+    assert.dom(avatarIcon).hasClass('foo', 'sets class names on avatar icon');
   });
 });
