@@ -12,7 +12,7 @@ module('Integration | Component | avatar image', function(hooks) {
 
     this.set('url', url);
 
-    await render(hbs`{{avatar-image url=url}}`);
+    await render(hbs`<AvatarImage @url={{url}} />`);
 
     let avatarImg = find('[data-test-selector="avatar-image"]');
 
@@ -33,7 +33,7 @@ module('Integration | Component | avatar image', function(hooks) {
 
     this.set('url', url);
 
-    await render(hbs`{{avatar-image url=url w=20}}`);
+    await render(hbs`<AvatarImage @url={{url}} @w={{20}} />`);
 
     let img = find('[data-test-selector="avatar-image"]');
     let src = img.getAttribute('src');
@@ -49,7 +49,7 @@ module('Integration | Component | avatar image', function(hooks) {
 
     this.set('url', url);
 
-    await render(hbs`{{avatar-image url=url h=20}}`);
+    await render(hbs`<AvatarImage @url={{url}} @h={{20}} />`);
 
     let img = find('[data-test-selector="avatar-image"]');
     let src = img.getAttribute('src');
@@ -66,7 +66,7 @@ module('Integration | Component | avatar image', function(hooks) {
     this.set('url', url);
     this.set('fit', 'facearea');
 
-    await render(hbs`{{avatar-image url=url fit=fit}}`);
+    await render(hbs`<AvatarImage @url={{url}} @fit={{fit}} />`);
 
     let img = find('[data-test-selector="avatar-image"]');
     let src = img.getAttribute('src');
@@ -81,7 +81,7 @@ module('Integration | Component | avatar image', function(hooks) {
 
     this.set('url', url);
 
-    await render(hbs`{{avatar-image url=url facepad=3}}`);
+    await render(hbs`<AvatarImage @url={{url}} @facepad={{3}} />`);
 
     let img = find('[data-test-selector="avatar-image"]');
     let src = img.getAttribute('src');
@@ -96,7 +96,7 @@ module('Integration | Component | avatar image', function(hooks) {
 
     this.set('url', url);
 
-    await render(hbs`{{avatar-image url=url faceindex=1}}`);
+    await render(hbs`<AvatarImage @url={{url}} @faceindex={{1}} />`);
 
     let img = find('[data-test-selector="avatar-image"]');
     let src = img.getAttribute('src');
@@ -111,7 +111,7 @@ module('Integration | Component | avatar image', function(hooks) {
 
     this.set('url', url);
 
-    await render(hbs`{{avatar-image url=url}}`);
+    await render(hbs`<AvatarImage @url={{url}} />`);
 
     let img = find('[data-test-selector="avatar-image"]');
     let src = img.getAttribute('src');
@@ -126,20 +126,20 @@ module('Integration | Component | avatar image', function(hooks) {
 
     this.set('url', url);
 
-    await render(hbs`{{avatar-image url=url alt='Cheesus' avatarImageClass='piggy'}}`);
+    await render(hbs`<AvatarImage @url={{url}} @alt="Cheesus" @avatarImageClass="piggy" />`);
 
     let img = find('[data-test-selector="avatar-image"]');
 
     assert.equal(img.getAttribute('alt'), 'Cheesus', 'sets "alt" attribute');
-    assert.ok(img.classList.contains('piggy'), 'sets class names on image');
+    assert.dom(img).hasClass('piggy', 'sets class names on image');
   });
 
   test('no url provided', async function(assert) {
-    await render(hbs`{{avatar-image avatarIconClass="foo"}}`);
+    await render(hbs`<AvatarImage @avatarIconClass="foo" />`);
 
     let avatarIcon = find('[data-test-selector="avatar-icon"]');
 
     assert.ok(avatarIcon, 'displays blank avatar icon');
-    assert.ok(avatarIcon.classList.contains('foo'), 'sets class names on avatar icon');
+    assert.dom(avatarIcon).hasClass('foo', 'sets class names on avatar icon');
   });
 });
