@@ -84,4 +84,12 @@ module('Integration | Component | avatar image', function(hooks) {
 
     assert.dom(selector).hasClass('foo', 'sets class names on avatar icon');
   });
+
+  test('yields nested content', async function(assert) {
+    await render(hbs`<AvatarImage><span></span></AvatarImage>`);
+
+    const selector = 'span';
+
+    assert.dom(selector).exists();
+  });
 });
