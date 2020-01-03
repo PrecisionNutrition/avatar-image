@@ -116,7 +116,7 @@ jobs:
           command: |
             yarn ember try:one ember-canary --skip-cleanup
 
-  publish_new_version:
+  run_classic_tests:
     <<: *defaults
 
     steps:
@@ -124,9 +124,9 @@ jobs:
           at: .
 
       - run:
-          name: 'Publish new version'
+          name: 'Run Tests for Ember Release'
           command: |
-            npm publish
+            yarn ember try:one ember-classic --skip-cleanup
 
 workflows:
   version: 2
@@ -158,15 +158,6 @@ workflows:
           requires:
             - lint_project
 
-      # Only publish when a tag is pushed
-      - publish_new_version:
+      - run_classic_tests:
           requires:
-            - run_default_tests
-            - run_release_tests
-            - run_beta_tests
-            - run_canary_tests
-          filters:
-            tags:
-              only: /\d+.\d+.\d+/
-            branches:
-              only: master
+            - lint_project
