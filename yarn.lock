@@ -1611,13 +1611,13 @@
   resolved "https://registry.yarnpkg.com/@precision-nutrition/eslint-config/-/eslint-config-1.6.0.tgz#c8c1da36f620fa6809c08de2e843a86e1f4e090b"
   integrity sha512-e/z+wnz6q+dX+nTvyrANxnUMQA18Zm9G+DvYC9K6NJ8jwJbztXBlrum7MCTVuDl+1cCBHrJQOM/lrLemO/TMcQ==
 
-"@precision-nutrition/imgix-photo@^1.3.2":
-  version "1.3.2"
-  resolved "https://registry.yarnpkg.com/@precision-nutrition/imgix-photo/-/imgix-photo-1.3.2.tgz#993c346347c64896c24133f709dde2083214c36d"
-  integrity sha512-0rSVObU5XEkROFRegMZsMjVY80hqUGv0KRoki0WnJX9MwNNae7Nq/HQeSharjiQR2kMvf5Gd8TMbe4P9gxfrCA==
+"@precision-nutrition/imgix-photo@^2.0.0":
+  version "2.0.0"
+  resolved "https://registry.yarnpkg.com/@precision-nutrition/imgix-photo/-/imgix-photo-2.0.0.tgz#6a7a0072342d7ec3e3cb96a5e2bf714fde19b86b"
+  integrity sha512-K+V3JAZREd+Ow9E5CMVZi64I7zSCzDF/NKNaAlkqaA5kt27MI2uTGWY9HjFDjbg987wYAL22CvcwF9xFxOxj9A==
   dependencies:
-    ember-cli-babel "^7.7.3"
-    ember-cli-htmlbars "^3.0.1"
+    ember-cli-babel "^7.13.0"
+    ember-cli-htmlbars "^4.2.0"
 
 "@sindresorhus/is@^0.7.0":
   version "0.7.0"
@@ -4873,16 +4873,6 @@ ember-cli-htmlbars-inline-precompile@^2.1.0:
     hash-for-dep "^1.2.3"
     heimdalljs-logger "^0.1.9"
     silent-error "^1.1.0"
-
-ember-cli-htmlbars@^3.0.1:
-  version "3.1.0"
-  resolved "https://registry.yarnpkg.com/ember-cli-htmlbars/-/ember-cli-htmlbars-3.1.0.tgz#87806c2a0bca2ab52d4fb8af8e2215c1ca718a99"
-  integrity sha512-cgvRJM73IT0aePUG7oQ/afB7vSRBV3N0wu9BrWhHX2zkR7A7cUBI7KC9VPk6tbctCXoM7BRGsCC4aIjF7yrfXA==
-  dependencies:
-    broccoli-persistent-filter "^2.3.1"
-    hash-for-dep "^1.5.1"
-    json-stable-stringify "^1.0.1"
-    strip-bom "^3.0.0"
 
 ember-cli-htmlbars@^4.2.0:
   version "4.2.0"
