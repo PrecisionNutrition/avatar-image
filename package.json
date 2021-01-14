@@ -22,7 +22,7 @@
     "test:all": "ember try:each"
   },
   "dependencies": {
-    "@precision-nutrition/imgix-photo": "^2.0.0",
+    "@precision-nutrition/imgix-photo": "github:PrecisionNutrition/imgix-photo#SP-2176",
     "ember-cli-babel": "^7.13.0",
     "ember-cli-htmlbars": "^4.2.0",
     "ember-md5": "^1.2.0"
