@@ -33,7 +33,7 @@ module('Integration | Component | avatar image', function(hooks) {
       .hasAttribute(
         'src',
         new RegExp(`^${url}`),
-        'does not prepend host information'
+        'does not prepend host information',
       );
 
     assert
@@ -41,14 +41,14 @@ module('Integration | Component | avatar image', function(hooks) {
       .hasAttribute(
         'src',
         new RegExp(/&w=20/),
-        'passes attributes to underlying component'
+        'passes attributes to underlying component',
       );
 
     assert
       .dom(selector)
       .hasAttribute(
         'alt',
-        alt
+        alt,
       );
 
     assert
@@ -56,7 +56,7 @@ module('Integration | Component | avatar image', function(hooks) {
       .hasAttribute(
         'width',
         '20',
-        'sets width'
+        'sets width',
       );
 
     assert
@@ -64,14 +64,14 @@ module('Integration | Component | avatar image', function(hooks) {
       .hasAttribute(
         'height',
         '30',
-        'sets height'
+        'sets height',
       );
 
     assert
       .dom(selector)
       .hasClass(
         'piggy',
-        'sets class names on image'
+        'sets class names on image',
       );
   });
 
