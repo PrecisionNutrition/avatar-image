@@ -3,10 +3,10 @@ import { setupRenderingTest } from 'ember-qunit';
 import { render } from '@ember/test-helpers';
 import hbs from 'htmlbars-inline-precompile';
 
-module('Integration | Component | avatar image', function(hooks) {
+module('Integration | Component | avatar image', function (hooks) {
   setupRenderingTest(hooks);
 
-  test('when URL present', async function(assert) {
+  test('when URL present', async function (assert) {
     const alt = 'alt';
     const url = '/foo.jpg';
 
@@ -30,52 +30,22 @@ module('Integration | Component | avatar image', function(hooks) {
 
     assert
       .dom(selector)
-      .hasAttribute(
-        'src',
-        new RegExp(`^${url}`),
-        'does not prepend host information',
-      );
+      .hasAttribute('src', new RegExp(`^${url}`), 'does not prepend host information');
 
     assert
       .dom(selector)
-      .hasAttribute(
-        'src',
-        new RegExp(/&w=20/),
-        'passes attributes to underlying component',
-      );
+      .hasAttribute('src', new RegExp(/&w=20/), 'passes attributes to underlying component');
 
-    assert
-      .dom(selector)
-      .hasAttribute(
-        'alt',
-        alt,
-      );
+    assert.dom(selector).hasAttribute('alt', alt);
 
-    assert
-      .dom(selector)
-      .hasAttribute(
-        'width',
-        '20',
-        'sets width',
-      );
+    assert.dom(selector).hasAttribute('width', '20', 'sets width');
 
-    assert
-      .dom(selector)
-      .hasAttribute(
-        'height',
-        '30',
-        'sets height',
-      );
+    assert.dom(selector).hasAttribute('height', '30', 'sets height');
 
-    assert
-      .dom(selector)
-      .hasClass(
-        'piggy',
-        'sets class names on image',
-      );
+    assert.dom(selector).hasClass('piggy', 'sets class names on image');
   });
 
-  test('when URL blank', async function(assert) {
+  test('when URL blank', async function (assert) {
     await render(hbs`<AvatarImage @avatarIconClass="foo" />`);
 
     const selector = '[data-test-selector="avatar-icon"]';
@@ -85,7 +55,7 @@ module('Integration | Component | avatar image', function(hooks) {
     assert.dom(selector).hasClass('foo', 'sets class names on avatar icon');
   });
 
-  test('yields nested content', async function(assert) {
+  test('yields nested content', async function (assert) {
     await render(hbs`<AvatarImage><span></span></AvatarImage>`);
 
     const selector = 'span';
