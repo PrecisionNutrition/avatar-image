@@ -1,0 +1,16 @@
+<div class="AvatarImage" ...attributes>
+  {{#if @url}}
+    <ImgixPhoto
+      @alt={{@alt}}
+      @autoSetDimensions={{true}}
+      @params={{@params}}
+      @url={{@url}}
+      class={{@avatarImageClass}}
+      data-test-selector="avatar-image"
+    />
+  {{else}}
+    <AvatarImage::Placeholder class={{@avatarIconClass}} />
+  {{/if}}
+
+  {{yield}}
+</div>
